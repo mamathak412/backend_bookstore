@@ -29,7 +29,7 @@ public class BookServiceImpl {
 	}
 
 	public List<Book> getBookByCategory(String category) {
-		List<Book> books = new ArrayList<>();
+		List<Book> books = new ArrayList<Book>();
 		for(Map.Entry<String, List<Book>> entry : prepareBooksByCategory().entrySet()) {
 			if(entry.getKey().equals(category)) {
 				books.addAll(entry.getValue());
@@ -39,7 +39,7 @@ public class BookServiceImpl {
 	}
 
 	public List<Book> getBooks() {
-		List<Book> books = new ArrayList<>();
+		List<Book> books = new ArrayList<Book>();
 		books.addAll(dataCenter.getDevopsBooks());
 		books.addAll(dataCenter.getJenkinsBooks());
 		books.addAll(dataCenter.getAWSBooks());
