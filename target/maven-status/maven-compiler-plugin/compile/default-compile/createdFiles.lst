@@ -1,0 +1,7 @@
+com\bookstore\ws\BookRestServiceImpl.class
+com\bookstore\model\User.class
+com\bookstore\model\Book.class
+com\bookstore\ws\UserRestServiceImpl.class
+com\bookstore\service\UserServiceImpl.class
+com\bookstore\service\BookServiceImpl.class
+com\bookstore\Application.class
