@@ -1,0 +1,21 @@
+version: “3”
+services:
+mongo:
+image: mongo:3.2.4
+ports:
+– 27017:27017
+command: –smallfiles
+
+mongo-init:
+build: ./mongo-init
+links:
+– mongo
+
+mongo-client:
+image: mongoclient/mongoclient
+ports:
+– 3030:3000
+environment:
+– MONGOCLIENT_DEFAULT_CONNECTION_URL=mongodb://mongo:27017
+links:
+– mongo

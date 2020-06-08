@@ -1,6 +1,17 @@
 package com.bookstore.model;
 
+import javax.persistence.Id;
+
+import org.bson.types.ObjectId;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class Book {
+	
+	@Id
+    private ObjectId _id;
+	
+	private String categoryName;
 	
 	private String bookId;
 	
@@ -17,6 +28,10 @@ public class Book {
 	private String cost;
 	
 	private String author;
+	
+	public Book() {
+		
+	}
 	
 	public Book(String bookId, String bookName, String bookDescription, String rating, String link, String bookImage,
 			String cost, String author) {
@@ -93,5 +108,13 @@ public class Book {
 
 	public void setAuthor(String author) {
 		this.author = author;
+	}
+
+	public String getCategoryName() {
+		return categoryName;
+	}
+
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
 	}
 }

@@ -13,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,7 +34,7 @@ public class BookRestServiceImpl {
 	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value="/books", method=RequestMethod.GET)
 	public ResponseEntity<List<Book>> books() {
-		List<Book> books = bookService.getBooks();
+		List<Book> books = bookService.listAll();
 		return new ResponseEntity<List<Book>>(books, HttpStatus.OK);
 	}
 	
@@ -43,5 +44,20 @@ public class BookRestServiceImpl {
 		List<Book> books = bookService.getBookByCategory(category);
 		return new ResponseEntity<List<Book>>(books, HttpStatus.OK);
 	}
+	
+	@CrossOrigin(origins = "http://localhost:4200")
+	@RequestMapping(value="/books", method=RequestMethod.POST)
+	public ResponseEntity<Book> addBook(@RequestBody Book book) {
+		Book savedbook = bookService.save(book);
+		return new ResponseEntity<Book>(savedbook, HttpStatus.OK);
+	}
+
+	@CrossOrigin(origins = "http://localhost:4200")
+	@RequestMapping(value="/books", method=RequestMethod.DELETE)
+	public ResponseEntity<String> deleteBook(@RequestBody Book book) {
+		bookService.delete(book);
+		return new ResponseEntity<>("Success", HttpStatus.OK);
+	}
+
 
 }
