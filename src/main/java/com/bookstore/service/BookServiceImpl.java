@@ -58,7 +58,7 @@ public class BookServiceImpl implements BookService{
 	
 	@Override
     public List<Book> listAll() {
-        List<Book> books = new ArrayList<>();
+        List<Book> books = new ArrayList<Book>();
         bookRepository.findAll().forEach(books::add); //fun with Java 8
         return books;
     }
