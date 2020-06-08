@@ -56,7 +56,7 @@ public class BookRestServiceImpl {
 	@RequestMapping(value="/books", method=RequestMethod.DELETE)
 	public ResponseEntity<String> deleteBook(@PathVariable String bookName) {
 		bookService.delete(bookName);
-		return new ResponseEntity<>("Success", HttpStatus.OK);
+		return new ResponseEntity<String>("Success", HttpStatus.OK);
 	}
 
 
