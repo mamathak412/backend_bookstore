@@ -54,8 +54,8 @@ public class BookRestServiceImpl {
 
 	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value="/books", method=RequestMethod.DELETE)
-	public ResponseEntity<String> deleteBook(@RequestBody Book book) {
-		bookService.delete(book);
+	public ResponseEntity<String> deleteBook(@PathVariable String bookName) {
+		bookService.delete(bookName);
 		return new ResponseEntity<>("Success", HttpStatus.OK);
 	}
 
