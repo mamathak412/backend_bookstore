@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bookstore.model.Book;
-import com.bookstore.service.BookServiceImpl;
+import com.bookstore.service.BookService;
 
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
@@ -29,33 +29,33 @@ public class BookRestServiceImpl {
 	private Logger logger = LoggerFactory.getLogger(BookRestServiceImpl.class);
 
 	@Autowired
-	private BookServiceImpl bookService;
+	private BookService bookService;
 
-	@CrossOrigin(origins = "http://135.254.163.44:4200")
+	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value="/books", method=RequestMethod.GET)
 	public ResponseEntity<List<Book>> books() {
 		List<Book> books = bookService.listAll();
 		return new ResponseEntity<List<Book>>(books, HttpStatus.OK);
 	}
 	
-	@CrossOrigin(origins = "http://135.254.163.44:4200")
+	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value="/books/{category}", method=RequestMethod.GET)
 	public ResponseEntity<List<Book>> booksByCategory(@PathVariable String category) {
 		List<Book> books = bookService.getBookByCategory(category);
 		return new ResponseEntity<List<Book>>(books, HttpStatus.OK);
 	}
 	
-	@CrossOrigin(origins = "http://135.254.163.44:4200")
+	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value="/books", method=RequestMethod.POST)
 	public ResponseEntity<Book> addBook(@RequestBody Book book) {
 		Book savedbook = bookService.save(book);
 		return new ResponseEntity<Book>(savedbook, HttpStatus.OK);
 	}
 
-	@CrossOrigin(origins = "http://135.254.163.44:4200")
+	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value="/books", method=RequestMethod.DELETE)
-	public ResponseEntity<String> deleteBook(@PathVariable String bookName) {
-		bookService.delete(bookName);
+	public ResponseEntity<String> deleteBook(@RequestBody Book book) {
+		bookService.delete(book);
 		return new ResponseEntity<String>("Success", HttpStatus.OK);
 	}
 

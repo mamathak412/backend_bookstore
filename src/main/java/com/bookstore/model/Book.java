@@ -9,8 +9,20 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Book {
 	
 	@Id
-    private ObjectId _id;
+    private ObjectId objectId;
 	
+	public ObjectId getObjectId() {
+		return objectId;
+	}
+
+	public void setObjectId(ObjectId objectId) {
+		this.objectId = objectId;
+	}
+
+	public void setLink(String link) {
+		this.link = link;
+	}
+
 	private String categoryName;
 	
 	private String bookId;

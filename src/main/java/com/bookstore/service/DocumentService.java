@@ -12,6 +12,6 @@ public interface DocumentService {
 	 
 	 List<BDocument> getDocumentByCategory(String category);
 	 
-	 void delete(String documentName);
+	 void delete(BDocument document);
 
 }

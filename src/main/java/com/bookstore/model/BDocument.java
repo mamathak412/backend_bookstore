@@ -9,20 +9,20 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class BDocument {
 	
 	@Id
-    private ObjectId _id;
+    private ObjectId objectId;
 	
 	private String documentName;
 	
 	private String link;
 	
 	private String categoryName;
-
-	public ObjectId get_id() {
-		return _id;
+	
+	public ObjectId getObjectId() {
+		return objectId;
 	}
 
-	public void set_id(ObjectId _id) {
-		this._id = _id;
+	public void setObjectId(ObjectId objectId) {
+		this.objectId = objectId;
 	}
 
 	public String getDocumentName() {

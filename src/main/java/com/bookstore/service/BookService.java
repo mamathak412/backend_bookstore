@@ -10,6 +10,8 @@ public interface BookService {
 	 
 	 List<Book> listAll();
 	 
-	 void delete(String bookName);
+	 List<Book> getBookByCategory(String bookName);
+	 
+	 void delete(Book book);
 
 }

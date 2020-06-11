@@ -55,8 +55,8 @@ public class DocumentRestServiceImpl {
 
 	@CrossOrigin(origins = "http://135.254.163.44:4200")
 	@RequestMapping(method=RequestMethod.DELETE)
-	public ResponseEntity<String> deleteDocument(@PathVariable String documentName) {
-		documentService.delete(documentName);
+	public ResponseEntity<String> deleteDocument(@RequestBody BDocument document) {
+		documentService.delete(document);
 		return new ResponseEntity<String>("Success", HttpStatus.OK);
 	}
 
