@@ -32,35 +32,35 @@ public class DocumentRestServiceImpl {
 	@Autowired
 	private DocumentService documentService;
 
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "http://135.254.163.44:4200")
 	@RequestMapping(value="/documents", method=RequestMethod.GET)
 	public ResponseEntity<List<BDocument>> documents() {
 		List<BDocument> documents = documentService.listAll();
 		return new ResponseEntity<List<BDocument>>(documents, HttpStatus.OK);
 	}
 	
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "http://135.254.163.44:4200")
 	@RequestMapping(value="documents/{category}", method=RequestMethod.GET)
 	public ResponseEntity<List<BDocument>> documentByCategory(@PathVariable String category) {
 		List<BDocument> documents = documentService.getDocumentByCategory(category);
 		return new ResponseEntity<List<BDocument>>(documents, HttpStatus.OK);
 	}
 	
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "http://135.254.163.44:4200")
 	@RequestMapping(value="/documents", method=RequestMethod.POST)
 	public ResponseEntity<BDocument> addDocument(@RequestBody BDocument document) {
 		BDocument savedDocument = documentService.save(document);
 		return new ResponseEntity<BDocument>(savedDocument, HttpStatus.OK);
 	}
 
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "http://135.254.163.44:4200")
 	@RequestMapping(value="/documents/{documentName}", method=RequestMethod.DELETE)
 	public ResponseEntity<String> deleteDocument(@PathVariable String documentName) {
 		documentService.delete(documentName);
 		return new ResponseEntity<String>("Success", HttpStatus.OK);
 	}
 	
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "http://135.254.163.44:4200")
 	@RequestMapping(value="/documents/search/{documentName}", method=RequestMethod.GET)
 	public ResponseEntity<List<BDocument>> documentByDocumentName(@PathVariable String documentName) {
 		List<BDocument> documents = documentService.getDocumentByDocumentName(documentName);
