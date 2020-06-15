@@ -34,11 +34,18 @@ public class BookServiceImpl implements BookService{
     }
 
 	@Override
-	public void delete(Book book) {
-		 bookRepository.delete(book);
+	public void delete(String bookName) {
+		 bookRepository.deleteByBookName(bookName);
 	}
-	
-	
-	
+
+	@Override
+	public List<Book> getBookByBookName(String bookName) {
+		return bookRepository.findByBookName(bookName);
+	}
+
+	@Override
+	public List<Book> getBookByBookNameAndCategoryName(String bookName, String categoryName) {
+		return bookRepository.findByBookNameAndCategoryName(bookName, categoryName);
+	}
 	
 }

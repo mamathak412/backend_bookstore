@@ -29,13 +29,18 @@ public class DocumentServiceImpl implements DocumentService{
     }
 
 	@Override
-	public void delete(BDocument document) {
-		documentRepository.delete(document);
+	public void delete(String documentName) {
+		documentRepository.deleteByDocumentName(documentName);
 	}
 
 	@Override
 	public List<BDocument> getDocumentByCategory(String category) {
 		return documentRepository.findByCategoryName(category);
+	}
+
+	@Override
+	public List<BDocument> getDocumentByDocumentName(String documentName) {
+		return documentRepository.findByDocumentName(documentName);
 	}
 	
 }

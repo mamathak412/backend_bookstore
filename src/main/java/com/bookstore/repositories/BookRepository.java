@@ -13,5 +13,9 @@ public interface BookRepository extends CrudRepository<Book, String> {
 	List<Book> findByCategoryName(String categoryName);
 	
 	void deleteByBookName(String bookName);
+	
+	List<Book> findByBookNameAndCategoryName(String bookName, String categoryName);
+	
+	List<Book> findByBookName(String bookName);
 
 }

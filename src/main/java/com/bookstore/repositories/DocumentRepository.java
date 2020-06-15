@@ -12,6 +12,8 @@ public interface DocumentRepository extends CrudRepository<BDocument, String> {
 	
 	List<BDocument> findByCategoryName(String categoryName);
 	
-	void deleteByDocumentName(String bookName);
+	void deleteByDocumentName(String documentName);
+	
+	List<BDocument> findByDocumentName(String documentName);
 
 }
