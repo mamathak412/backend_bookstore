@@ -32,28 +32,28 @@ public class QueryRestServiceImpl {
 	@Autowired
 	private QueryService queryService;
 
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "http://135.254.163.44:4200")
 	@RequestMapping(value="/queris", method=RequestMethod.GET)
 	public ResponseEntity<List<Query>> documents() {
 		List<Query> documents = queryService.listAll();
 		return new ResponseEntity<List<Query>>(documents, HttpStatus.OK);
 	}
 	
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "http://135.254.163.44:4200")
 	@RequestMapping(value="queris/{category}", method=RequestMethod.GET)
 	public ResponseEntity<List<Query>> documentByCategory(@PathVariable String category) {
 		List<Query> documents = queryService.getQueryByCategory(category);
 		return new ResponseEntity<List<Query>>(documents, HttpStatus.OK);
 	}
 	
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "http://135.254.163.44:4200")
 	@RequestMapping(value="/queris", method=RequestMethod.POST)
 	public ResponseEntity<Query> addDocument(@RequestBody Query query) {
 		Query savedquery = queryService.save(query);
 		return new ResponseEntity<Query>(savedquery, HttpStatus.OK);
 	}
 
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "http://135.254.163.44:4200")
 	@RequestMapping(value="/queris/{queryName}", method=RequestMethod.DELETE)
 	public ResponseEntity<String> deleteDocument(@PathVariable String queryName) {
 		queryService.delete(queryName);

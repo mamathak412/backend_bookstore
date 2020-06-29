@@ -28,14 +28,14 @@ public class UserRestServiceImpl {
 	@Autowired
 	private UserServiceImpl userService;
 
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "http://135.254.163.44:4200")
 	@RequestMapping(value="/user/signin", method=RequestMethod.POST)
 	public ResponseEntity<Boolean> signin(@RequestBody User user) {
 		boolean flag = userService.signin(user);
 		return new ResponseEntity<Boolean>(flag, HttpStatus.OK);
 	}
 	
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "http://135.254.163.44:4200")
 	@RequestMapping(value="/user/signup", method=RequestMethod.POST)
 	public ResponseEntity<String> signup(@RequestBody User user) {
 		userService.signup(user);
