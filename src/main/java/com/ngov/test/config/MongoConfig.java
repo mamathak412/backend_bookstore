@@ -1,4 +1,4 @@
-package com.bookstore.config;
+package com.ngov.test.config;
 
 //@Configuration
 public class MongoConfig {

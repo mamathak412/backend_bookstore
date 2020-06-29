@@ -1,11 +1,11 @@
-package com.bookstore.repositories;
+package com.ngov.test.repositories;
 
 import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.bookstore.model.Query;
+import com.ngov.test.model.Query;
 
 @Repository
 public interface QueryRepository extends CrudRepository<Query, String> {

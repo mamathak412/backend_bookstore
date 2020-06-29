@@ -1,11 +1,11 @@
-package com.bookstore.repositories;
+package com.ngov.test.repositories;
 
 import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.bookstore.model.BDocument;
+import com.ngov.test.model.BDocument;
 
 @Repository
 public interface DocumentRepository extends CrudRepository<BDocument, String> {

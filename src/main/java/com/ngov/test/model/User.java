@@ -1,4 +1,4 @@
-package com.bookstore.model;
+package com.ngov.test.model;
 
 public class User {
 	

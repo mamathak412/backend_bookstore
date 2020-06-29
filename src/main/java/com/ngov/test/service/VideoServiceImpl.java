@@ -1,4 +1,4 @@
-package com.bookstore.service;
+package com.ngov.test.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.bookstore.model.Video;
-import com.bookstore.repositories.VideoRepository;
+import com.ngov.test.model.Video;
+import com.ngov.test.repositories.VideoRepository;
 
 @Component
 public class VideoServiceImpl implements VideoService{

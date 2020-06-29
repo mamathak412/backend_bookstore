@@ -1,9 +1,9 @@
-package com.bookstore.service;
+package com.ngov.test.service;
 
 import java.util.List;
 
-import com.bookstore.model.BDocument;
-import com.bookstore.model.Book;
+import com.ngov.test.model.BDocument;
+import com.ngov.test.model.Book;
 
 public interface DocumentService {
 	

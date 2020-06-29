@@ -1,8 +1,8 @@
-package com.bookstore.service;
+package com.ngov.test.service;
 
 import java.util.List;
 
-import com.bookstore.model.Query;
+import com.ngov.test.model.Query;
 
 public interface QueryService {
 	

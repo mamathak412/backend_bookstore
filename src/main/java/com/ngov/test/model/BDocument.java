@@ -1,4 +1,4 @@
-package com.bookstore.model;
+package com.ngov.test.model;
 
 import javax.persistence.Id;
 
@@ -6,12 +6,12 @@ import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
-public class Query {
+public class BDocument {
 	
 	@Id
     private ObjectId objectId;
 	
-	private String queryName;
+	private String documentName;
 	
 	private String link;
 	
@@ -23,6 +23,14 @@ public class Query {
 
 	public void setObjectId(ObjectId objectId) {
 		this.objectId = objectId;
+	}
+
+	public String getDocumentName() {
+		return documentName;
+	}
+
+	public void setDocumentName(String documentName) {
+		this.documentName = documentName;
 	}
 
 	public String getLink() {
@@ -40,13 +48,4 @@ public class Query {
 	public void setCategoryName(String categoryName) {
 		this.categoryName = categoryName;
 	}
-
-	public String getQueryName() {
-		return queryName;
-	}
-
-	public void setQueryName(String queryName) {
-		this.queryName = queryName;
-	}
-
 }

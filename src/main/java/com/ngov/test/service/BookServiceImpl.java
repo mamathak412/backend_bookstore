@@ -1,4 +1,4 @@
-package com.bookstore.service;
+package com.ngov.test.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.bookstore.model.Book;
-import com.bookstore.repositories.BookRepository;
+import com.ngov.test.model.Book;
+import com.ngov.test.repositories.BookRepository;
 
 @Component
 public class BookServiceImpl implements BookService{

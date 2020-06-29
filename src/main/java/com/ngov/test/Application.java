@@ -1,4 +1,4 @@
-package com.bookstore;
+package com.ngov.test;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

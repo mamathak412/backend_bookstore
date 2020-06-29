@@ -1,11 +1,11 @@
-package com.bookstore.service;
+package com.ngov.test.service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import com.bookstore.model.User;
+import com.ngov.test.model.User;
 
 @Component
 public class UserServiceImpl {

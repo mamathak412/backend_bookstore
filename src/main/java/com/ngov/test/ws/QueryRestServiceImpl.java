@@ -1,4 +1,4 @@
-package com.bookstore.ws;
+package com.ngov.test.ws;
 
 import java.util.List;
 
@@ -18,9 +18,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bookstore.model.BDocument;
-import com.bookstore.model.Query;
-import com.bookstore.service.QueryService;
+import com.ngov.test.model.BDocument;
+import com.ngov.test.model.Query;
+import com.ngov.test.service.QueryService;
 
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
