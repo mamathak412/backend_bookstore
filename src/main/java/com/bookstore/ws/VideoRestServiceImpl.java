@@ -31,28 +31,28 @@ public class VideoRestServiceImpl {
 	@Autowired
 	private VideoService videoService;
 
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "http://135.254.163.44:4200")
 	@RequestMapping(value="/videos", method=RequestMethod.GET)
 	public ResponseEntity<List<Video>> videos() {
 		List<Video> videos = videoService.listAll();
 		return new ResponseEntity<List<Video>>(videos, HttpStatus.OK);
 	}
 	
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "http://135.254.163.44:4200")
 	@RequestMapping(value="videos/{category}", method=RequestMethod.GET)
 	public ResponseEntity<List<Video>> documentByCategory(@PathVariable String category) {
 		List<Video> videos = videoService.getVideoByCategory(category);
 		return new ResponseEntity<List<Video>>(videos, HttpStatus.OK);
 	}
 	
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "http://135.254.163.44:4200")
 	@RequestMapping(value="/videos", method=RequestMethod.POST)
 	public ResponseEntity<Video> addDocument(@RequestBody Video video) {
 		Video savedVideo = videoService.save(video);
 		return new ResponseEntity<Video>(savedVideo, HttpStatus.OK);
 	}
 
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "http://135.254.163.44:4200")
 	@RequestMapping(value="/videos/{videoName}", method=RequestMethod.DELETE)
 	public ResponseEntity<String> deleteVideo(@PathVariable String videoName) {
 		videoService.delete(videoName);
