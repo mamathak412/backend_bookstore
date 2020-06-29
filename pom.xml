@@ -265,7 +265,7 @@
 				</executions>
 				<configuration>
 					<serverId>nexus</serverId>
-					<nexusUrl>http://localhost:8081/nexus/</nexusUrl>
+					<nexusUrl>http://repository.all.alcatel-lucent.com/nexus/</nexusUrl>
 					<skipStaging>true</skipStaging>
 				</configuration>
 			</plugin>
