@@ -16,13 +16,23 @@ public class User {
 	
 	private String phoneNumber;
 	
+private int count;
+	
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+	
 	public User() {
 		
 	}
 	
 	
 	public User(String userId, String firstName, String lastName, String password, String address, String emailId,
-			String phoneNumber) {
+			String phoneNumber, int count) {
 		super();
 		this.userId = userId;
 		this.firstName = firstName;
@@ -31,6 +41,7 @@ public class User {
 		this.address = address;
 		this.emailId = emailId;
 		this.phoneNumber = phoneNumber;
+		this.count = count;
 	}
 
 	public String getUserId() {

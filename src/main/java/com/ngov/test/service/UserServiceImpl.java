@@ -27,8 +27,8 @@ public class UserServiceImpl {
 	
 	private List<User> getUsers() {
 		users = new ArrayList<User>();
-		users.add(new User("mkrish", "Mamatha", "K", "12345", "Bangalore", "mamatha.k@gmail.com", "123456"));
-		users.add(new User("admin", "Admin", "", "12345", "Bangalore", "admin@gmail.com", "123456"));
+		/*users.add(new User("mkrish", "Mamatha", "K", "12345", "Bangalore", "mamatha.k@gmail.com", "123456"));
+		users.add(new User("admin", "Admin", "", "12345", "Bangalore", "admin@gmail.com", "123456"));*/
 		return users;
 	}
 }

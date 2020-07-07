@@ -41,12 +41,22 @@ public class Book {
 	
 	private String author;
 	
+	private int count;
+	
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
 	public Book() {
 		
 	}
 	
-	public Book(String bookId, String bookName, String bookDescription, String rating, String link, String bookImage,
-			String cost, String author) {
+	public Book(ObjectId objectId, String bookId, String bookName, String bookDescription, String rating, String link, String bookImage,
+			String cost, String author, int count) {
 		super();
 		this.bookId = bookId;
 		this.bookName = bookName;
@@ -56,6 +66,8 @@ public class Book {
 		this.bookImage = bookImage;
 		this.cost = cost;
 		this.author = author;
+		this.count = count;
+		this.objectId = objectId;
 	}
 
 	public String getBookId() {

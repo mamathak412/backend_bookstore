@@ -6,7 +6,7 @@
 	<groupId>com.ale.ngov.test</groupId>
 	<artifactId>BookStore</artifactId>
 	<version>1.0</version>
-	<packaging>jar</packaging>
+	<packaging>pom</packaging>
 
 	<name>BookStore</name>
 	<url>http://maven.apache.org</url>

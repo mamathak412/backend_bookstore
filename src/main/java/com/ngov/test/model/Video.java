@@ -7,16 +7,26 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 public class Video {
-	
+
 	@Id
-    private ObjectId objectId;
-	
+	private ObjectId objectId;
+
 	private String videoName;
-	
+
 	private String link;
-	
+
 	private String categoryName;
-	
+
+	private int count;
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
 	public ObjectId getObjectId() {
 		return objectId;
 	}
