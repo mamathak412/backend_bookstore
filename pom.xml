@@ -6,7 +6,7 @@
 	<groupId>com.ale.ngov.test</groupId>
 	<artifactId>BookStore</artifactId>
 	<version>1.0</version>
-	<packaging>pom</packaging>
+	<packaging>jar</packaging>
 
 	<name>BookStore</name>
 	<url>http://maven.apache.org</url>
@@ -203,7 +203,23 @@
 			</plugin>
 
 			<plugin>
-				<artifactId>maven-deploy-plugin</artifactId>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.5.1</version>
+				<executions>
+					<execution>
+						<id>default-deploy</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<serverId>enterprise-network-snapshot</serverId>
+					<nexusUrl>http://repository.all.alcatel-lucent.com/nexus/content/repositories/enterprise-network-snapshot</nexusUrl>
+					<skipStaging>true</skipStaging>
+				</configuration>
 			</plugin>
 
 			<plugin>
