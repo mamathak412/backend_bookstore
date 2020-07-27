@@ -355,7 +355,7 @@
             </goals>
             <configuration>
               <files>
-                <file>sonar.properties</file>
+                <file>sonar-project.properties</file>
               </files>
             </configuration>
           </execution>
@@ -373,7 +373,7 @@
                     <configuration>
                         <encoding>UTF-8</encoding>
                         <consoleOutput>true</consoleOutput>
-                        <failsOnError>true</failsOnError>
+                        <failsOnError>false</failsOnError>
                         <linkXRef>false</linkXRef>
                     </configuration>
                     <goals>
@@ -382,24 +382,6 @@
                 </execution>
             </executions>
         </plugin>
-		
-		 <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>findbugs-maven-plugin</artifactId>
-                <version>3.0.1</version>
-                <configuration>
-                    <findbugsXmlOutput>true</findbugsXmlOutput>
-                    <!-- Optional directory to put findbugs xdoc xml report -->
-                    <findbugsXmlOutputDirectory>target/xmlOutput</findbugsXmlOutputDirectory>
-                    <plugins>
-                        <plugin>
-                            <groupId>com.h3xstream.findsecbugs</groupId>
-                            <artifactId>findsecbugs-plugin</artifactId>
-                            <version>LATEST</version> <!-- Auto-update to the latest stable -->
-                        </plugin>
-                   </plugins>
-               </configuration>
-            </plugin>
 
 		</plugins>
 	</build>
