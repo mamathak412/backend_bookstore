@@ -23,7 +23,7 @@ public class TwitterConsumer {
 	public List<Twitter> twitters() throws IOException {
 		BasicConfigurator.configure();
 		List<Twitter> twitters = new ArrayList<>();
-		KafkaConsumer<String, String> consumer = createConsumer("first_topic");
+		KafkaConsumer<String, String> consumer = createConsumer("twitter");
 		  
 			while (true) {
 				ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100)); // new in Kafka 2.0.0
@@ -40,7 +40,7 @@ public class TwitterConsumer {
 	public static KafkaConsumer<String, String> createConsumer(String topic) {
 
 		String bootstrapServers = "127.0.0.1:9092";
-		String groupId = "kafka-demo-elasticsearch";
+		String groupId = "twitter-group";
 
 		// create consumer configs
 		Properties properties = new Properties();
