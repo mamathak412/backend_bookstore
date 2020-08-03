@@ -21,7 +21,7 @@ import com.ngov.test.model.Twitter;
 @Component
 public class TwitterConsumer {
 	
-	@KafkaListener(topics = "twitter")
+	@KafkaListener(topics = "twitter", group="twitter-group")
 	public List<Twitter> consume() throws IOException {
 		BasicConfigurator.configure();
 		List<Twitter> twitters = new ArrayList<>();
