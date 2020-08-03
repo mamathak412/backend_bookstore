@@ -13,6 +13,7 @@ import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.apache.log4j.BasicConfigurator;
+import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
 import com.ngov.test.model.Twitter;
@@ -20,7 +21,8 @@ import com.ngov.test.model.Twitter;
 @Component
 public class TwitterConsumer {
 	
-	public List<Twitter> twitters() throws IOException {
+	@KafkaListener(topics = "twitter", groupId = "twitter-group")
+	public List<Twitter> consume() throws IOException {
 		BasicConfigurator.configure();
 		List<Twitter> twitters = new ArrayList<>();
 		KafkaConsumer<String, String> consumer = createConsumer("twitter");
@@ -39,7 +41,7 @@ public class TwitterConsumer {
 
 	public static KafkaConsumer<String, String> createConsumer(String topic) {
 
-		String bootstrapServers = "127.0.0.1:9092";
+		String bootstrapServers = "135.254.163.44:9092";
 		String groupId = "twitter-group";
 
 		// create consumer configs

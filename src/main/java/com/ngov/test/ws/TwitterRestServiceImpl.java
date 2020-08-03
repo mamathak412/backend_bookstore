@@ -29,7 +29,7 @@ public class TwitterRestServiceImpl {
 	@CrossOrigin(origins = "http://135.254.163.44:4200")
 	@RequestMapping(value="/twitters", method=RequestMethod.GET)
 	public ResponseEntity<List<Twitter>> twitters() throws IOException {
-		List<Twitter> twitters = twitterConsumer.twitters();
+		List<Twitter> twitters = twitterConsumer.consume();
 		return new ResponseEntity<List<Twitter>>(twitters, HttpStatus.OK);
 	}
 
