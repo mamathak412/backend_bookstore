@@ -61,7 +61,6 @@ public class Application {
         return factory;
     }
     
-    // String Consumer Configuration
 
     @Bean
     public ConsumerFactory<String, String> stringConsumerFactory() {
@@ -79,7 +78,6 @@ public class Application {
         return factory;
     }
 
-    // Byte Array Consumer Configuration
 
     @Bean
     public ConsumerFactory<String, byte[]> byteArrayConsumerFactory() {
